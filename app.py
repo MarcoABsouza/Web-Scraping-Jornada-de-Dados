@@ -33,22 +33,24 @@ POSTGRES_PORT = os.getenv("POSTGRES_PORT")
 DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
 engine = create_engine(DATABASE_URL)
 
-# Function to load HTML content of a web page using Selenium
 def fetch_page(url):
-    # Configure Selenium WebDriver for Chrome
-    service = Service(ChromeDriverManager().install())
+    # Configurar o Selenium WebDriver
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless")  # Run the browser in headless mode (without opening a window)
-    driver = webdriver.Chrome(service=service, options=options)
-    
-    # Opens the specified URL in the browser
-    driver.get(url)
-    time.sleep(3)  # Time for page to fully load
+    options.add_argument("--headless")  # Modo sem interface gráfica
+    options.add_argument("--no-sandbox")  # Necessário para Docker
+    options.add_argument("--disable-dev-shm-usage")  # Evita problemas de memória compartilhada
+    options.add_argument("--disable-gpu")  # Para desempenho em ambientes sem GPU
 
-    # Capture the HTML of the loaded page
+    # Inicializar o WebDriver
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+
+    # Carregar a página e capturar o HTML
+    driver.get(url)
+    time.sleep(3)
     html = driver.page_source
     driver.quit()
-    return html # return HTML as string
+    return html
 
 # Function to extract information from HTML using BeautifulSoup
 def parse_page(html):
