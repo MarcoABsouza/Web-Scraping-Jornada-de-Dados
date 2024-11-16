@@ -19,10 +19,18 @@ COPY requirements.txt .
 # Instala as dependências do Python
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Instala a versão correta do ChromeDriver correspondente ao Chromium
+RUN CHROME_VERSION=$(chromium --version | grep -oP '\d+\.\d+\.\d+') && \
+    CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/latest-versions-per-milestone.json" | \
+    jq -r ".milestones[\"\${CHROME_VERSION%%.*}\"].version") && \
+    wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chromedriver/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O /tmp/chromedriver.zip && \
+    unzip /tmp/chromedriver.zip -d /usr/local/bin && \
+    chmod +x /usr/local/bin/chromedriver && \
+    rm /tmp/chromedriver.zip
+
 # Define variáveis de ambiente para Selenium/Chrome
-ENV PATH="/usr/lib/chromium:/usr/lib/chromium-browser:$PATH" \
-    CHROMEDRIVER_PATH="/usr/lib/chromium-driver"
-    
+ENV PATH="/usr/lib/chromium:/usr/lib/chromium-browser:$PATH"
+
 # Copia o código da aplicação para o contêiner
 COPY . .
 
