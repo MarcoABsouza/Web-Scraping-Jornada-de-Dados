@@ -105,4 +105,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 
 👨‍💻 Desenvolvido por [Marco Aurelio Balduino de Souza](https://www.linkedin.com/in/marcoaureliobalduinodesouza/) Vamos conversar? 🚀
-```
+
