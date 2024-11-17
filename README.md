@@ -103,12 +103,6 @@ Este projeto é uma solução automatizada para monitoramento de preços de prod
 ## 🛠️ **Contribuições**
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
 
----
 
-## 📄 **Licença**
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
----
-
-👨‍💻 Desenvolvido por [Seu Nome](https://linkedin.com/in/seuusuario). Vamos conversar? 🚀
+👨‍💻 Desenvolvido por [Marco Aurelio Balduino de Souza]([https://linkedin.com/in/seuusuario](https://www.linkedin.com/in/marcoaureliobalduinodesouza/). Vamos conversar? 🚀
 ```
