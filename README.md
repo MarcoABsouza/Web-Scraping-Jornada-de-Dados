@@ -104,5 +104,5 @@ Este projeto é uma solução automatizada para monitoramento de preços de prod
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
 
 
-👨‍💻 Desenvolvido por [Marco Aurelio Balduino de Souza]([https://linkedin.com/in/seuusuario](https://www.linkedin.com/in/marcoaureliobalduinodesouza/). Vamos conversar? 🚀
+👨‍💻 Desenvolvido por([Marco Aurelio Balduino de Souza](https://www.linkedin.com/in/marcoaureliobalduinodesouza/) Vamos conversar? 🚀
 ```
