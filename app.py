@@ -13,8 +13,6 @@ import pandas as pd
 import asyncio
 import psycopg2
 
-
-
 load_dotenv()
 
 # Telegram Bot Settings
@@ -39,7 +37,6 @@ def fetch_page(url):
     options.add_argument("--headless")  # Modo sem interface gráfica
     options.add_argument("--no-sandbox")  # Necessário para Docker
     options.add_argument("--disable-dev-shm-usage")  # Evita problemas de memória compartilhada
-    options.add_argument("--disable-gpu")  # Para desempenho em ambientes sem GPU
 
     # Inicializar o WebDriver
     service = Service(ChromeDriverManager().install())
