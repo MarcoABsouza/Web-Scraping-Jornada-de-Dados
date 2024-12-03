@@ -49,7 +49,7 @@ Este projeto é uma solução automatizada para monitoramento de preços de prod
 
 2. Crie e ative um ambiente virtual:
    ```bash
-   python -m venv venv
+   python -m venv .venv
    source venv/bin/activate  # No Windows, use venv\Scripts\activate
    ```
 
